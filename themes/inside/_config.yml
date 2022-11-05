@@ -383,11 +383,12 @@ plugins:
       <script>
         new Valine({
           el: '#vcomment',
-          appId: 'R45Yk3KFhSbb82Mi3PW2nKwE-gzGzoHsz',
-          appKey: 'er9AbHk94jP16Wy82bqERBVi',
+          appId: 'mXPpKFJU8QI4epecun4PFHRe-gzGzoHsz',
+          appKey: 'BkcojMk9fBXc1UaIUVpzc68d',
           path: location.pathname,
           avatar: 'wavatar',
           placeholder: ' ー( ´ ▽ ` )ﾉ 留下你的小脚印...',
+          visitor: true
         })
       </script>
 # Plugins

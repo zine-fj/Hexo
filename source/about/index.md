@@ -9,7 +9,7 @@ date: 2018-10-22 15:25:30
 喜欢所有可爱、美好的东西！偏爱古风，自诩为文艺，若为同道中人，欢迎交流。
 
 #### 本站信息
-本站使用<a href="https://hexo.io/zh-cn" target="_target">hexo</a>生成，主题<a href="https://github.com/ike-c/hexo-theme-inside" target="_target">inside</a>，部署在<a href="https://github.com" target="_target">Github</a>，评论系统<a href="https://deserts.io/diy-a-comment-system/" target="_target">valine</a>
+本站使用<a href="https://hexo.io/zh-cn" target="_target">hexo</a>生成，主题<a href="https://github.com/ike-c/hexo-theme-inside" target="_target">inside</a>，部署在<a href="https://github.com" target="_target">Github</a>，评论系统<a href="https://valine.js.org/" target="_target">valine</a>
 
 #### 联系方式
 <div style="display: flex;flex-wrap: wrap;">
