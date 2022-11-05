@@ -8,9 +8,9 @@ subtitle: 一世长安
 description: 有趣文章的收藏与分享
 # seo关键字
 keywords: 一世长安，文艺，古风，中国色，诗词，歌词，分享
-author: min zhong
+author: 敏中
 language: zh-cn
-timezone:
+timezone: 
 
 # URL
 ## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'
