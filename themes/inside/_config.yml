@@ -385,10 +385,12 @@ plugins:
           el: '#vcomment',
           appId: 'mXPpKFJU8QI4epecun4PFHRe-gzGzoHsz',
           appKey: 'BkcojMk9fBXc1UaIUVpzc68d',
-          path: location.pathname,
-          avatar: 'wavatar',
+          meta: ['nick'],
+          path: window.location.pathname,
+          avatar: 'robohash',
           placeholder: ' ー( ´ ▽ ` )ﾉ 留下你的小脚印...',
-          visitor: true
+          visitor: true,
+          recordIP: true,
         })
       </script>
 # Plugins
