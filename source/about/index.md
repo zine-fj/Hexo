@@ -23,10 +23,14 @@ date: 2018-10-22 15:25:30
     </div>
 </div> -->
 
-#### 好玩的网页
+#### 有趣
 <div style="display:flex;flex-wrap:wrap;">
-    <a href="https://zine-fj.github.io/starrySky/" title="效果 ~ 夜空"  target="_target">星空</a>、
-    <a href="http://zhongguose.com/" title="中国色"  target="_target">中国色</a>
+    <a href="https://zine-fj.github.io/starrySky/" title="夜空"  target="_target">星空</a>、
+    <a href="https://zine-fj.github.io/Time/" title="永不停歇的只有时间"  target="_target">时间</a>、
+    <a href="https://zine-fj.github.io/Butterfly/" title="🦋"  target="_target">蝴蝶</a>、
+    <a href="http://zhongguose.com/" title="中国色"  target="_target">中国色</a>、
+    <a href="https://neal.fun/deep-sea/" title="深海"  target="_target">深海</a>
+    
 </div>
 
 
