@@ -75,13 +75,13 @@ appearance:
 # Sidebar profile
 profile:
   # 邮箱用于生成 gravatar 头像，如配置了 `hexo.config.email`，此项可缺省
-  email: fuj8023@gmail.com
+  email: 747810974@qq.com
 
   # 也可以直接设置头像 URL
   avatar: images/tx.jpg
 
   # 个性签名
-  bio: Early know so stumbles over the heart, see at the beginning don't know each other
+  bio: 山行野宿，孤身万里
 
 # Sidebar menu
 menu:
@@ -93,7 +93,7 @@ menu:
 # Try to sort by changing the order of the keys
 sns:
   # `email` will fallback to `profile.email` if not specified
-  email: fuj8023@gmail.com
+  email: 747810974@qq.com
   # `feed` will fallback to `hexo.config.feed.path` if not specified
   feed:
   github: https://github.com/zine-fj
@@ -124,7 +124,7 @@ footer:
   theme: true
 
   # 于最后一行添加自定义内容
-  # custom: Hosted by <a target="_blank" href="">Github Pages</a>
+  custom: 我会在那腥臭腐朽的日子里熠熠生辉
 
 
 
