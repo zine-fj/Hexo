@@ -1,115 +1,894 @@
 ---
 title: Jay
 date: 2022-11-19 21:58:40
-tags:
+categories: 
+- 分享
+color: '#f00'
+thumbnail: images/Jay/zhoujielun.jpeg
 ---
 <style>
-    * {
-      margin: 0;
-      padding: 0;
-    }
+      * {
+        margin: 0;
+        padding: 0;
+      }
 
-    ul,
-    li {
-      list-style: none;
-    }
+      ul,
+      li {
+        list-style: none;
+      }
 
-    .jay-list {
-      display: flex;
-      flex-wrap: wrap;
-    }
+      .jay-list {
+        min-width: 390px;
+        display: flex;
+        justify-content: center;
+        align-items: baseline;
+        flex-wrap: wrap;
+        padding: 20px;
+      }
 
-    .jay {
-      display: inline-block;
-      box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
-      padding: 20px;
-      border-radius: 10px;
-      margin: 0 30px 30px 0;
-      cursor: pointer;
-    }
+      .jay {
+        display: inline-block;
+        width: 360px;
+        box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+        padding: 20px 0 10px;
+        border-radius: 10px;
+        margin: 15px;
+        cursor: pointer;
+      }
 
-    .jay:hover {
-      box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
-    }
+      .jay:hover {
+        box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+      }
 
-    .jay .header {
-      display: flex;
-      margin-bottom: 20px;
-    }
+      .jay .header {
+        display: flex;
+        margin-bottom: 15px;
+        padding: 0 20px;
+      }
 
-    .jay .cover {
-      width: 130px;
-      height: 130px;
-      object-fit: cover;
-      border-radius: 5px;
-      margin-right: 20px;
-    }
+      .jay .cover {
+        width: 130px;
+        height: 130px;
+        object-fit: cover;
+        border-radius: 5px;
+        margin-right: 20px;
+      }
+      .jay:hover .cover {
+        box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+      }
 
-    .jay .intro {}
+      .jay .intro {
+      }
 
-    .jay .intro .album {
-      display: flex;
-      margin: 10px 0;
-    }
+      .jay .intro .album {
+        display: flex;
+        margin: 10px 0;
+      }
 
-    .jay .intro .album-word {
-      margin-right: 15px;
-    }
+      .jay .intro .album-word {
+        flex: none;
+        margin-right: 15px;
+      }
 
-    .jay .intro .name-cn {
-      font-weight: bold;
-      font-size: 18px;
-      max-width: 200px;
-    }
+      .jay .intro .name-cn {
+        font-weight: bold;
+        font-size: 18px;
+      }
 
-    .jay .intro .name-zn {
-      font-size: 14px;
-      font-weight: 400;
-      color: rgb(149, 141, 141);
-    }
+      .jay .intro .name-zn {
+        font-size: 14px;
+        font-weight: 400;
+        color: rgb(149, 141, 141);
+      }
 
-    .jay .intro .singer {
-      margin-bottom: 10px;
-    }
+      .jay .intro .singer {
+        margin-bottom: 10px;
+      }
 
-    .jay .intro .time {}
+      .jay .intro .time {
+      }
 
-    .jay .music-list {}
+      .jay .music-list {
+        padding: 0;
+      }
 
-    .jay .music-list .music-li {
-      display: flex;
-      justify-content: space-between;
-      margin-bottom: 10px;
-    }
-    .jay .music-list .music-li:hover {
-      background-color: rgba(0,0,0,.04);
-    }
+      .jay .music-list .music-li {
+        height: 30px;
+        line-height: 1;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 0 20px;
+      }
 
-    .jay .music-list .music-li .index {
-      margin-right: 5px;
-      font-size: 14px;
-      width: 12px;
-    display: inline-block;
-    }
+      .jay .music-list .music-li:hover {
+        background-color: rgba(0, 0, 0, 0.04);
+      }
+      .jay .music-list .music-li .music-li-left {
+        display: inline-flex;
+        align-items: center;
+      }
 
-    .jay .music-list .music-li .name {
-      font-size: 16px;
-    }
-    .jay .music-list .music-li .singer {
-      font-size: 14px;
-    }
-  </style>
+      .jay .music-list .music-li .index {
+        margin-right: 10px;
+        font-size: 14px;
+        /* width: 20px; */
+        display: inline-block;
+      }
 
+      .jay .music-list .music-li .name {
+        font-size: 16px;
+        display: inline-block;
+        max-width: 180px;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+      }
+
+      .jay .music-list .music-li .singer {
+        font-size: 14px;
+        color: rgb(149, 141, 141);
+        max-width: 180px;
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+      }
+    </style>
   <div class="jay-list" id="JayList"></div>
-
   <script>
     const JayAlbumList = [
+      {
+        title: "最伟大的作品",
+        titleZN: "Greatest Works Of Art",
+        time: "2022-07-15",
+        name: "周杰伦",
+        cover: "images/Jay/最伟大的作品.jpeg",
+        musicList: [
+          { name: "Intro", singer: "周杰伦" },
+          { name: "最伟大的作品", singer: "周杰伦" },
+          { name: "还在流浪", singer: "周杰伦" },
+          { name: "说好不哭", singer: "周杰伦 / 五月天 阿信" },
+          { name: "红颜如霜", singer: "周杰伦" },
+          { name: "不爱我就拉倒", singer: "周杰伦" },
+          { name: "Mojito", singer: "周杰伦" },
+          { name: "错过的烟火", singer: "周杰伦" },
+          { name: "等你下课", singer: "周杰伦" },
+          { name: "粉色海洋", singer: "周杰伦" },
+          { name: "倒影", singer: "周杰伦" },
+          { name: "我是如此相信", singer: "周杰伦" },
+        ],
+      },
+      {
+        title: "Mojito",
+        titleZN: "",
+        time: "2020-06-12",
+        name: "周杰伦",
+        cover: "images/Jay/Mojito.jpeg",
+        musicList: [{ name: "Mojito", singer: "周杰伦" }],
+      },
+      {
+        title: "我是如此相信",
+        titleZN: "I Truly Believe",
+        time: "2019-12-15",
+        name: "周杰伦",
+        cover: "images/Jay/我是如此相信.jpeg",
+        musicList: [{ name: "我是如此相信", singer: "周杰伦" }],
+      },
+      {
+        title: "周杰伦地表最强世界巡回演唱会",
+        titleZN: "",
+        time: "2019-11-01",
+        name: "周杰伦",
+        cover: "images/Jay/周杰伦地表最强世界巡回演唱会.jpeg",
+        musicList: [
+          { name: "英雄", singer: "周杰伦" },
+          { name: "双节棍", singer: "周杰伦" },
+          { name: "开不了口", singer: "周杰伦" },
+          { name: "床边故事", singer: "周杰伦" },
+          { name: "夜曲 + 窃爱", singer: "周杰伦" },
+          { name: "以父之名", singer: "周杰伦" },
+          { name: "美人鱼", singer: "周杰伦" },
+          { name: "我要夏天", singer: "周杰伦" },
+          { name: "我的时代", singer: "派伟俊" },
+          { name: "晴天", singer: "周杰伦" },
+          { name: "稻香", singer: "周杰伦" },
+          { name: "青花瓷", singer: "周杰伦" },
+          { name: "爱的飞行日记", singer: "杨瑞代" },
+          { name: "枫 + 退后 + 搁浅", singer: "宋健彰" },
+          { name: "爸 我回来了", singer: "周杰伦" },
+          { name: "鞋子特大号", singer: "周杰伦" },
+          { name: "半岛铁盒", singer: "周杰伦" },
+          { name: "印第安老斑鸠", singer: "周杰伦" },
+          { name: "大笨钟 + 暗号 + 彩虹 + 龙卷风", singer: "周杰伦" },
+          { name: "土耳其冰淇淋", singer: "周杰伦" },
+          { name: "NOW YOU SEE ME", singer: "周杰伦" },
+          { name: "告白气球", singer: "周杰伦" },
+          { name: "爷爷泡的茶", singer: "周杰伦" },
+          { name: "七里香", singer: "周杰伦" },
+          { name: "说走就走", singer: "周杰伦" },
+        ],
+      },
+      {
+        title: "说好不哭",
+        titleZN: "",
+        time: "2019-09-16",
+        name: "周杰伦",
+        cover: "images/Jay/说好不哭.jpeg",
+        musicList: [{ name: "说好不哭", singer: "周杰伦 / 五月天 阿信" }],
+      },
+      {
+        title: "不爱我就拉倒",
+        titleZN: "",
+        time: "2018-05-15",
+        name: "周杰伦",
+        cover: "images/Jay/不爱我就拉倒.jpeg",
+        musicList: [{ name: "不爱我就拉倒", singer: "周杰伦" }],
+      },
+      {
+        title: "等你下课",
+        titleZN: "",
+        time: "2018-01-18",
+        name: "周杰伦",
+        cover: "images/Jay/等你下课.jpeg",
+        musicList: [{ name: "等你下课", singer: "周杰伦 / 杨瑞代" }],
+      },
+      {
+        title: "周杰伦的床边故事",
+        titleZN: "Jay Chou's Bedtime Stories",
+        time: "2016-06-24",
+        name: "周杰伦",
+        cover: "images/Jay/周杰伦的床边故事.jpeg",
+        musicList: [
+          { name: "床边故事", singer: "周杰伦" },
+          { name: "说走就走", singer: "周杰伦" },
+          { name: "一点点", singer: "周杰伦" },
+          { name: "前世情人", singer: "周杰伦" },
+          { name: "英雄", singer: "周杰伦" },
+          { name: "不该", singer: "周杰伦 / 张惠妹" },
+          { name: "告白气球", singer: "周杰伦" },
+          { name: "Now You See Me", singer: "周杰伦" },
+          { name: "爱情废柴", singer: "周杰伦" },
+        ],
+      },
+      {
+        title: "摩天轮 世界巡回演唱会",
+        titleZN: "Opus Jay World Tour",
+        time: "2016-05-10",
+        name: "周杰伦",
+        cover: "images/Jay/摩天轮 世界巡回演唱会.jpeg",
+        musicList: [
+          { name: "惊叹号", singer: "周杰伦" },
+          { name: "龙拳", singer: "周杰伦" },
+          { name: "最后的战役", singer: "周杰伦" },
+          { name: "天台", singer: "周杰伦" },
+          { name: "比较大的大提琴", singer: "周杰伦 / 袁咏琳 / 杨瑞代" },
+          { name: "快门慢舞", singer: "周杰伦" },
+          { name: "打架舞", singer: "周杰伦" },
+          { name: "哪里都是你", singer: "周杰伦" },
+          { name: "一路向北", singer: "周杰伦" },
+          { name: "不能说的秘密", singer: "周杰伦" },
+          { name: "双截棍", singer: "周杰伦" },
+          { name: "明明就", singer: "周杰伦" },
+          { name: "Mine Mine", singer: "周杰伦" },
+          { name: "龙卷风", singer: "周杰伦" },
+          { name: "公公偏头疼", singer: "周杰伦" },
+          { name: "青花瓷", singer: "周杰伦" },
+          { name: "斗牛 / 水手怕水 / 大笨钟", singer: "周杰伦" },
+          { name: "彩虹 / 轨迹", singer: "周杰伦" },
+          { name: "手语", singer: "周杰伦" },
+          { name: "开不了口", singer: "周杰伦" },
+          { name: "乌克丽丽", singer: "周杰伦" },
+          { name: "阳光宅男", singer: "周杰伦 / 袁咏琳 / 杨瑞代" },
+        ],
+      },
+      {
+        title: "英雄",
+        titleZN: "",
+        time: "2016-03-24",
+        name: "周杰伦",
+        cover: "images/Jay/英雄.jpeg",
+        musicList: [{ name: "英雄", singer: "周杰伦" }],
+      },
+      {
+        title: "Try",
+        titleZN: "",
+        time: "2016-01-06",
+        name: "周杰伦",
+        cover: "images/Jay/Try.jpeg",
+        musicList: [{ name: "Try", singer: "周杰伦 / 派伟俊" }],
+      },
+      {
+        title: "哎呦，不错哦",
+        titleZN: "Aiyo, Not Bad",
+        time: "2014-12-26",
+        name: "周杰伦",
+        cover: "images/Jay/哎呦，不错哦.jpeg",
+        musicList: [
+          { name: "阳明山", singer: "周杰伦" },
+          { name: "窃爱", singer: "周杰伦" },
+          { name: "算什么男人", singer: "周杰伦" },
+          { name: "天涯过客", singer: "周杰伦" },
+          { name: "怎么了", singer: "周杰伦 / 袁咏琳" },
+          { name: "一口气全念对", singer: "周杰伦" },
+          { name: "我要夏天", singer: "周杰伦 / 杨瑞代" },
+          { name: "手写的从前", singer: "周杰伦" },
+          { name: "鞋子特大号", singer: "周杰伦" },
+          { name: "听爸爸的话", singer: "周杰伦" },
+          { name: "美人鱼", singer: "周杰伦" },
+          { name: "听见下雨的声音", singer: "周杰伦" },
+        ],
+      },
+      {
+        title: "黄俊郎的黑",
+        titleZN: "",
+        time: "2013-12-25",
+        name: "周杰伦",
+        cover: "images/Jay/黄俊郎的黑.jpeg",
+        musicList: [
+          { name: "准备中", singer: "杨瑞代" },
+          { name: "天才之翼", singer: "杨瑞代" },
+          { name: "孤单", singer: "杨瑞代" },
+          { name: "美丽的消失", singer: "杨瑞代" },
+          { name: "过场", singer: "杨瑞代" },
+          { name: "热闹的宁静", singer: "杨瑞代" },
+          { name: "归途", singer: "杨瑞代" },
+          { name: "这所有的一切", singer: "杨瑞代" },
+        ],
+      },
+      {
+        title: "天台电影原声带",
+        titleZN: "THE ROOFTOP A Jay Chou Film OST",
+        time: "2013-07-08",
+        name: "周杰伦",
+        cover: "images/Jay/天台电影原声带.jpeg",
+        musicList: [
+          { name: "美术馆", singer: "黄雨勋" },
+          { name: "保龄男孩", singer: "黄雨勋" },
+          { name: "波爷", singer: "周杰伦 / 曾志伟 / 袁咏琳 / 麦烝玮" },
+          { name: "美景", singer: "黄雨勋" },
+          { name: "浪子膏", singer: "黄雨勋" },
+          { name: "天台", singer: "周杰伦 / 柯有伦 / 徐帆" },
+          { name: "气势", singer: "黄雨勋" },
+          { name: "龙门澡堂", singer: "黄雨勋" },
+          { name: "If", singer: "稳拿乐队" },
+          { name: "快门漫舞", singer: "Darren" },
+          { name: "阿郎的童年", singer: "黄雨勋" },
+          { name: "Strike", singer: "黄雨勋" },
+          { name: "热血码头", singer: "黄雨勋" },
+          { name: "钱难赚", singer: "柯有伦 / 黄俊郎 / 周杰伦" },
+          { name: "水管的友情", singer: "周杰伦" },
+          { name: "逛夜市", singer: "黄雨勋" },
+          { name: "情人湖夜市", singer: "周杰伦 / 唐从圣" },
+          { name: "捞金鱼", singer: "黄雨勋" },
+          { name: "骰子", singer: "黄雨勋" },
+          {
+            name: "大明星",
+            singer: "周杰伦 / 柯有伦 / 于冠华 / 宋健彰 / 蔡朝华 / 罗文裕",
+          },
+          { name: "屋顶上的愿望", singer: "黄雨勋" },
+          { name: "Yor're My Everything", singer: "Santa Esmerada" },
+          { name: "英雄之歌", singer: "黄雨勋" },
+          { name: "天台的月光", singer: "周杰伦" },
+          { name: "竹竿舞", singer: "周杰伦" },
+          { name: "狗仔舞", singer: "周杰伦" },
+          { name: "威少的陷阱", singer: "黄雨勋" },
+          { name: "哪里都是你", singer: "周杰伦" },
+          { name: "兄弟的安慰", singer: "黄雨勋" },
+          { name: "悲剧的序幕", singer: "黄雨勋" },
+          { name: "无助", singer: "周杰伦" },
+          { name: "亡命追逐", singer: "黄雨勋" },
+          { name: "Goodbye", singer: "黄雨勋" },
+          { name: "天台的月光(吉他版)", singer: "周杰伦" },
+        ],
+      },
+      {
+        title: "十二新作",
+        titleZN: "Opus 12",
+        time: "2012-12-28",
+        name: "周杰伦",
+        cover: "images/Jay/十二新作.jpeg",
+        musicList: [
+          { name: "四季列车", singer: "周杰伦" },
+          { name: "手语", singer: "周杰伦" },
+          { name: "公公偏头痛", singer: "周杰伦" },
+          { name: "明明就", singer: "周杰伦" },
+          { name: "傻笑", singer: "周杰伦 / 袁咏琳" },
+          { name: "比较大的大提琴", singer: "周杰伦 / 梁心颐 / 杨瑞代" },
+          { name: "爱你没差", singer: "周杰伦" },
+          { name: "红尘客栈", singer: "周杰伦" },
+          { name: "梦想启动", singer: "周杰伦" },
+          { name: "大笨钟", singer: "周杰伦" },
+          { name: "哪里都是你", singer: "周杰伦" },
+          { name: "乌克丽丽", singer: "周杰伦" },
+        ],
+      },
+      {
+        title: "惊叹号",
+        titleZN: "Wow!",
+        time: "2011-11-11",
+        name: "周杰伦",
+        cover: "images/Jay/惊叹号.jpeg",
+        musicList: [
+          { name: "惊叹号", singer: "周杰伦" },
+          { name: "迷魂曲", singer: "周杰伦" },
+          { name: "Mine Mine", singer: "周杰伦" },
+          { name: "公主病", singer: "周杰伦" },
+          { name: "你好吗", singer: "周杰伦" },
+          { name: "疗伤烧肉粽", singer: "周杰伦" },
+          { name: "琴伤", singer: "周杰伦" },
+          { name: "水手怕水", singer: "周杰伦" },
+          { name: "世界未末日", singer: "周杰伦" },
+          { name: "皮影戏", singer: "周杰伦" },
+          { name: "超跑女神", singer: "周杰伦" },
+        ],
+      },
+      {
+        title: "超时代演唱会",
+        titleZN: "The Era 2010 World Tour",
+        time: "2011-01-25",
+        name: "周杰伦",
+        cover: "images/Jay/超时代演唱会.jpeg",
+        musicList: [
+          { name: "龙战骑士", singer: "周杰伦" },
+          { name: "跨时代", singer: "周杰伦" },
+          { name: "蛇舞", singer: "周杰伦 / 梁心颐" },
+          { name: "爱在西元前", singer: "周杰伦" },
+          { name: "我不配", singer: "周杰伦" },
+          { name: "嘻哈空姐", singer: "周杰伦" },
+          { name: "威廉古堡", singer: "周杰伦" },
+          { name: "魔术先生", singer: "周杰伦" },
+          { name: "黑色幽默", singer: "周杰伦 / 袁咏琳" },
+          { name: "想你就写信", singer: "周杰伦" },
+          { name: "你是我的OK绷", singer: "周杰伦 / 浪花兄弟" },
+          { name: "稻香", singer: "周杰伦" },
+          { name: "阳光宅男", singer: "周杰伦" },
+          { name: "龙卷风", singer: "周杰伦" },
+          { name: "说好的幸福呢 + 淘汰 + 青花瓷", singer: "周杰伦" },
+          { name: "免费教学录像带", singer: "周杰伦" },
+          { name: "时光机", singer: "周杰伦" },
+          { name: "爸我回来了 + 心事谁人知", singer: "周杰伦" },
+          { name: "雨下一整晚", singer: "周杰伦" },
+          { name: "爱的飞行日记", singer: "周杰伦 / 杨瑞代" },
+          { name: "以父之名", singer: "周杰伦" },
+          { name: "开不了口", singer: "周杰伦" },
+          { name: "东风破", singer: "周杰伦" },
+          { name: "双节棍", singer: "周杰伦" },
+          { name: "给我一首歌的时间", singer: "周杰伦 / 蔡依林" },
+        ],
+      },
+      {
+        title: "跨时代",
+        titleZN: "The Era",
+        time: "2010-05-18",
+        name: "周杰伦",
+        cover: "images/Jay/跨时代.jpeg",
+        musicList: [
+          { name: "跨时代", singer: "周杰伦" },
+          { name: "说了再见", singer: "周杰伦" },
+          { name: "烟花易冷", singer: "周杰伦" },
+          { name: "免费教学录影带", singer: "周杰伦" },
+          { name: "好久不见", singer: "周杰伦" },
+          { name: "雨下一整晚", singer: "周杰伦" },
+          { name: "嘻哈空姐", singer: "周杰伦" },
+          { name: "我落泪情绪零碎", singer: "周杰伦" },
+          { name: "爱的飞行日记", singer: "周杰伦 / 杨瑞代" },
+          { name: "自导自演", singer: "周杰伦" },
+          { name: "超人不会飞", singer: "周杰伦" },
+        ],
+      },
+      {
+        title: "熊猫人",
+        titleZN: "",
+        time: "2010-03-18",
+        name: "周杰伦",
+        cover: "images/Jay/熊猫人.jpeg",
+        musicList: [{ name: "熊猫人", singer: "周杰伦" }],
+      },
+      {
+        title: "魔杰座",
+        titleZN: "Capricorn",
+        time: "2008-10-15",
+        name: "周杰伦",
+        cover: "images/Jay/魔杰座.jpeg",
+        musicList: [
+          { name: "龙战骑士", singer: "周杰伦" },
+          { name: "给我一首歌的时间", singer: "周杰伦" },
+          { name: "蛇舞", singer: "周杰伦 / 梁心颐" },
+          { name: "花海", singer: "周杰伦" },
+          { name: "魔术先生", singer: "周杰伦" },
+          { name: "说好的幸福呢", singer: "周杰伦" },
+          { name: "兰亭序", singer: "周杰伦" },
+          { name: "流浪诗人", singer: "周杰伦 / 杨瑞代" },
+          { name: "时光机", singer: "周杰伦" },
+          { name: "乔克叔叔", singer: "周杰伦" },
+          { name: "稻香", singer: "周杰伦" },
+        ],
+      },
+      {
+        title: "周杰伦2007世界巡回演唱会",
+        titleZN: "Jay 2007 The World Tours Live Performance",
+        time: "2008-01-30",
+        name: "周杰伦",
+        cover: "images/Jay/周杰伦2007世界巡回演唱会.jpeg",
+        musicList: [
+          { name: "黄金甲", singer: "周杰伦" },
+          { name: "无双", singer: "周杰伦" },
+          { name: "不能说的秘密", singer: "周杰伦" },
+          { name: "退后", singer: "周杰伦" },
+          { name: "甜甜的", singer: "周杰伦" },
+          { name: "最长的电影", singer: "周杰伦" },
+          { name: "蒲公英的约定", singer: "周杰伦" },
+          { name: "白色风车", singer: "周杰伦" },
+          { name: "菊花台", singer: "周杰伦" },
+          { name: "麦芽糖", singer: "周杰伦" },
+          { name: "牛仔很忙", singer: "周杰伦" },
+          { name: "听妈妈的话", singer: "周杰伦 / 潘玮柏 / 张学友" },
+          { name: "本草纲目", singer: "周杰伦" },
+          { name: "千里之外", singer: "周杰伦 / 费玉清" },
+          { name: "夜曲", singer: "周杰伦" },
+          { name: "迷迭香", singer: "周杰伦" },
+          { name: "阳光宅男", singer: "周杰伦" },
+          { name: "发如雪", singer: "周杰伦" },
+          { name: "霍元甲", singer: "周杰伦" },
+          { name: "双截棍", singer: "周杰伦" },
+          { name: "周大侠", singer: "周杰伦" },
+        ],
+      },
+      {
+        title: "我很忙",
+        titleZN: "On The Run!",
+        time: "2007-11-02",
+        name: "周杰伦",
+        cover: "images/Jay/我很忙.jpeg",
+        musicList: [
+          { name: "牛仔很忙", singer: "周杰伦" },
+          { name: "彩虹", singer: "周杰伦" },
+          { name: "青花瓷", singer: "周杰伦" },
+          { name: "阳光宅男", singer: "周杰伦" },
+          { name: "蒲公英的约定", singer: "周杰伦" },
+          { name: "无双", singer: "周杰伦" },
+          { name: "我不配", singer: "周杰伦" },
+          { name: "扯", singer: "周杰伦" },
+          { name: "甜甜的", singer: "周杰伦" },
+          { name: "最长的电影", singer: "周杰伦" },
+        ],
+      },
+      {
+        title: "不能说的秘密 电影原声带",
+        titleZN: "",
+        time: "2007-08-13",
+        name: "周杰伦",
+        cover: "images/Jay/不能说的秘密 电影原声带.jpeg",
+        musicList: [
+          { name: "Opening", singer: "Terdsak Janpan" },
+          { name: "脚踏车", singer: "周杰伦" },
+          { name: "早操", singer: "周杰伦" },
+          { name: "淡水海边", singer: "周杰伦" },
+          { name: "斗琴", singer: "周杰伦" },
+          { name: "湘伦小雨四手联弹", singer: "周杰伦" },
+          { name: "Ride With Me", singer: "Terdsak Janpan" },
+          { name: "父与子", singer: "周杰伦" },
+          { name: "情人的眼泪", singer: "姚苏蓉" },
+          { name: "First Kiss", singer: "周杰伦" },
+          { name: "女孩别为我哭泣", singer: "黄俊郎" },
+          { name: "晴天娃娃", singer: "江语晨" },
+          { name: "阿郎与阿宝", singer: "周杰伦" },
+          { name: "与父共舞", singer: "Terdsak Janpan" },
+          { name: "路小雨", singer: "周杰伦" },
+          { name: "The Swan", singer: "周杰伦" },
+          { name: "Flash Back", singer: "Terdsak Janpan" },
+          { name: "Secret(慢板)", singer: "周杰伦" },
+          { name: "Angel", singer: "Terdsak Janpan" },
+          { name: "小雨写立可白Ⅰ", singer: "周杰伦" },
+          { name: "小雨写立可白Ⅱ", singer: "周杰伦" },
+          { name: "Secret(加长快板)", singer: "周杰伦" },
+          { name: "琴房", singer: "周杰伦" },
+          { name: "Ending", singer: "周杰伦" },
+          { name: "不能说的秘密", singer: "周杰伦" },
+        ],
+      },
+      {
+        title: "黄金甲",
+        titleZN: "Jay Chou Curse Of The Golden Flower",
+        time: "2006-12-08",
+        name: "周杰伦",
+        cover: "images/Jay/黄金甲.jpeg",
+        musicList: [
+          { name: "黄金甲", singer: "周杰伦" },
+          { name: "菊花台(杰伦钢琴演奏版)", singer: "周杰伦" },
+        ],
+      },
+      {
+        title: "依然范特西",
+        titleZN: "Still Fantasy",
+        time: "2006-09-05",
+        name: "周杰伦",
+        cover: "images/Jay/依然范特西.jpeg",
+        musicList: [
+          { name: "夜的第七章", singer: "周杰伦 / 潘儿" },
+          { name: "听妈妈的话", singer: "周杰伦" },
+          { name: "千里之外", singer: "周杰伦 / 费玉清" },
+          { name: "本草纲目", singer: "周杰伦" },
+          { name: "退后", singer: "周杰伦" },
+          { name: "红模仿", singer: "周杰伦" },
+          { name: "心雨", singer: "周杰伦" },
+          { name: "白色风车", singer: "周杰伦" },
+          { name: "迷迭香", singer: "周杰伦" },
+          { name: "菊花台", singer: "周杰伦" },
+        ],
+      },
+      {
+        title: "霍元甲",
+        titleZN: "Huo Yuan Chia EP",
+        time: "2006-01-20",
+        name: "周杰伦",
+        cover: "images/Jay/霍元甲.jpeg",
+        musicList: [
+          { name: "霍元甲", singer: "周杰伦" },
+          { name: "献世", singer: "周杰伦" },
+        ],
+      },
+      {
+        title: "大头贴",
+        titleZN: "",
+        time: "2006-01-12",
+        name: "周杰伦",
+        cover: "images/Jay/大头贴.jpeg",
+        musicList: [{ name: "大头贴", singer: "周杰伦" }],
+      },
+      {
+        title: "11月的萧邦",
+        titleZN: "November's Chopin",
+        time: "2005-11-01",
+        name: "周杰伦",
+        cover: "images/Jay/11月的萧邦.jpeg",
+        musicList: [
+          { name: "夜曲", singer: "周杰伦" },
+          { name: "蓝色风暴", singer: "周杰伦" },
+          { name: "发如雪", singer: "周杰伦" },
+          { name: "黑色毛衣", singer: "周杰伦" },
+          { name: "四面楚歌", singer: "周杰伦 / 林迈克" },
+          { name: "枫", singer: "周杰伦" },
+          { name: "浪漫手机", singer: "周杰伦" },
+          { name: "逆鳞", singer: "周杰伦" },
+          { name: "麦芽糖", singer: "周杰伦" },
+          { name: "珊瑚海", singer: "周杰伦 / 梁心颐" },
+          { name: "漂移", singer: "周杰伦" },
+          { name: "一路向北", singer: "周杰伦" },
+        ],
+      },
+      {
+        title: "Initial J",
+        titleZN:
+          "Jay Chou Greatest Hits + Original Theme Songs from'INITIAL D THE MOVIE'",
+        time: "2005-08-31",
+        name: "周杰伦",
+        cover: "images/Jay/Initial J.jpeg",
+        musicList: [
+          { name: "可爱女人", singer: "周杰伦" },
+          { name: "黑色幽默", singer: "周杰伦" },
+          { name: "忍者", singer: "周杰伦" },
+          { name: "双截棍", singer: "周杰伦" },
+          { name: "最后的战役", singer: "周杰伦" },
+          { name: "以父之名", singer: "周杰伦" },
+          { name: "东风破", singer: "周杰伦" },
+          { name: "双刀", singer: "周杰伦" },
+          { name: "七里香", singer: "周杰伦" },
+          { name: "外婆", singer: "周杰伦" },
+          { name: "漂移", singer: "周杰伦" },
+          { name: "一路向北", singer: "周杰伦" },
+        ],
+      },
+      {
+        title: "2004 无与伦比演唱会",
+        titleZN: "",
+        time: "2005-01-21",
+        name: "周杰伦",
+        cover: "images/Jay/2004 无与伦比演唱会.jpeg",
+        musicList: [
+          { name: "以父之名", singer: "周杰伦" },
+          { name: "止战之殇", singer: "周杰伦" },
+          { name: "她的睫毛", singer: "周杰伦" },
+          { name: "晴天", singer: "周杰伦" },
+          { name: "你听得到", singer: "周杰伦" },
+          { name: "梯田 + 爸我回来了", singer: "周杰伦" },
+          { name: "园游会", singer: "周杰伦" },
+          { name: "龙卷风", singer: "周杰伦" },
+          { name: "将军", singer: "周杰伦" },
+          { name: "乱舞春秋", singer: "周杰伦" },
+          {
+            name: "星晴 + 回到过去 + 最后的战役 + 爱我别走",
+            singer: "周杰伦",
+          },
+          { name: "我的地盘", singer: "周杰伦" },
+          { name: "爱情悬崖", singer: "周杰伦" },
+          { name: "搁浅", singer: "周杰伦" },
+          { name: "借口", singer: "周杰伦" },
+          { name: "瓦解", singer: "周杰伦" },
+          { name: "双刀 + 双截棍 + 龙拳", singer: "周杰伦" },
+          { name: "困兽之斗", singer: "周杰伦" },
+          { name: "倒带", singer: "周杰伦" },
+          { name: "简单爱", singer: "周杰伦" },
+          { name: "七里香", singer: "周杰伦" },
+          { name: "外婆", singer: "周杰伦" },
+          { name: "断了的弦", singer: "周杰伦" },
+          { name: "东风破", singer: "周杰伦" },
+          { name: "轨迹", singer: "周杰伦" },
+        ],
+      },
+      {
+        title: "七里香",
+        titleZN: "Common Jasmine Orange",
+        time: "2004-08-03",
+        name: "周杰伦",
+        cover: "images/Jay/七里香.jpeg",
+        musicList: [
+          { name: "我的地盘", singer: "周杰伦" },
+          { name: "七里香", singer: "周杰伦" },
+          { name: "借口", singer: "周杰伦" },
+          { name: "外婆", singer: "周杰伦" },
+          { name: "将军", singer: "周杰伦" },
+          { name: "搁浅", singer: "周杰伦" },
+          { name: "乱舞春秋", singer: "周杰伦" },
+          { name: "困兽之斗", singer: "周杰伦" },
+          { name: "游园会", singer: "周杰伦" },
+          { name: "止战之殇", singer: "周杰伦" },
+        ],
+      },
+      {
+        title: "寻找周杰伦",
+        titleZN: "Hidden Track",
+        time: "2003-11-13",
+        name: "周杰伦",
+        cover: "images/Jay/寻找周杰伦.jpeg",
+        musicList: [
+          { name: "轨迹", singer: "周杰伦" },
+          { name: "断了的弦", singer: "周杰伦" },
+          { name: "轨迹(伴奏)", singer: "周杰伦" },
+          { name: "断了的弦(伴奏)", singer: "周杰伦" },
+        ],
+      },
+      {
+        title: "叶惠美",
+        titleZN: "Yeh Hui–mei",
+        time: "2003-07-31",
+        name: "周杰伦",
+        cover: "images/Jay/叶惠美.jpeg",
+        musicList: [
+          { name: "以父之名", singer: "周杰伦" },
+          { name: "懦夫", singer: "周杰伦" },
+          { name: "晴天", singer: "周杰伦" },
+          { name: "三年二班", singer: "周杰伦" },
+          { name: "东风破", singer: "周杰伦" },
+          { name: "你听得到", singer: "周杰伦" },
+          { name: "同一种调调", singer: "周杰伦" },
+          { name: "她的睫毛", singer: "周杰伦" },
+          { name: "爱情悬崖", singer: "周杰伦" },
+          { name: "梯田", singer: "周杰伦" },
+          { name: "双刀", singer: "周杰伦" },
+        ],
+      },
+      {
+        title: "The One 周杰伦演唱会",
+        titleZN: "",
+        time: "2002-10-25",
+        name: "周杰伦",
+        cover: "images/Jay/The One 周杰伦演唱会.jpeg",
+        musicList: [
+          { name: "双截棍", singer: "周杰伦" },
+          { name: "忍者", singer: "周杰伦" },
+          { name: "爷爷泡的茶", singer: "周杰伦" },
+          { name: "暗号", singer: "周杰伦" },
+          { name: "爱在西元前", singer: "周杰伦" },
+          { name: "半岛铁盒", singer: "周杰伦" },
+          { name: "回到过去", singer: "周杰伦" },
+          { name: "斗牛", singer: "周杰伦" },
+          { name: "分裂", singer: "周杰伦" },
+          { name: "安静", singer: "周杰伦" },
+          { name: "黑色幽默", singer: "周杰伦" },
+          { name: "找自己", singer: "周杰伦" },
+          { name: "龙卷风", singer: "周杰伦" },
+          { name: "星晴", singer: "周杰伦" },
+          { name: "龙拳", singer: "周杰伦" },
+          { name: "上海一九四三", singer: "周杰伦" },
+          { name: "你怎么连话都说不清楚", singer: "周杰伦" },
+          { name: "最后的战役", singer: "周杰伦" },
+          { name: "简单爱", singer: "周杰伦" },
+          { name: "开不了口", singer: "周杰伦" },
+        ],
+      },
+      {
+        title: "八度空间",
+        titleZN: "The Eight Dimensions",
+        time: "2002-07-18",
+        name: "周杰伦",
+        cover: "images/Jay/八度空间.jpeg",
+        musicList: [
+          { name: "半兽人", singer: "周杰伦" },
+          { name: "半岛铁盒", singer: "周杰伦" },
+          { name: "暗号", singer: "周杰伦" },
+          { name: "龙拳", singer: "周杰伦" },
+          { name: "火车叨位去", singer: "周杰伦" },
+          { name: "分裂(离开)", singer: "周杰伦" },
+          { name: "爷爷泡的茶", singer: "周杰伦" },
+          { name: "回到过去", singer: "周杰伦" },
+          { name: "米兰的小铁匠", singer: "周杰伦" },
+          { name: "最后的战役", singer: "周杰伦" },
+        ],
+      },
+      {
+        title: "Partners 拍档",
+        titleZN: "周杰伦 方文山联手创作精选",
+        time: "2002-04-01",
+        name: "周杰伦",
+        cover: "images/Jay/Partners 拍档.jpeg",
+        musicList: [
+          { name: "刀马旦", singer: "周杰伦 / 李玟" },
+          { name: "上海一九四三", singer: "周杰伦" },
+          { name: "禁止悲伤", singer: "许茹芸" },
+          { name: "爱在西元前", singer: "周杰伦" },
+          { name: "夜空的精灵", singer: "古巨基" },
+          { name: "落雨声", singer: "江蕙" },
+          { name: "动心", singer: "温岚 / 林妙可" },
+          { name: "娘子", singer: "周杰伦" },
+          { name: "电灯泡", singer: "康康" },
+          { name: "电灯泡 II", singer: "康康" },
+          { name: "胡同里有只猫", singer: "温岚" },
+          { name: "反方向的钟", singer: "周杰伦" },
+        ],
+      },
+      {
+        title: "范特西PLUS",
+        titleZN: "FANTASY PLUS",
+        time: "2001-12-28",
+        name: "周杰伦",
+        cover: "images/Jay/范特西PLUS.jpeg",
+        musicList: [
+          { name: "蜗牛", singer: "周杰伦" },
+          { name: "你比从前快乐", singer: "周杰伦" },
+          { name: "世界末日", singer: "周杰伦" },
+        ],
+      },
+      {
+        title: "Fantasy Show香港演唱会",
+        titleZN: "",
+        time: "2001-11-05",
+        name: "周杰伦",
+        cover: "images/Jay/Fantasy Show香港演唱会.jpeg",
+        musicList: [
+          { name: "开不了口", singer: "周杰伦" },
+          { name: "双截棍", singer: "周杰伦" },
+          { name: "一路上有你", singer: "周杰伦" },
+          { name: "爸，我回来了", singer: "周杰伦" },
+          { name: "黑色幽默", singer: "周杰伦" },
+          { name: "龙卷风", singer: "周杰伦" },
+        ],
+      },
+      {
+        title: "范特西",
+        titleZN: "Fantasy",
+        time: "2001-09-14",
+        name: "周杰伦",
+        cover: "images/Jay/范特西.jpeg",
+        musicList: [
+          { name: "爱在西元前", singer: "周杰伦" },
+          { name: "爸，我回来了", singer: "周杰伦" },
+          { name: "简单爱", singer: "周杰伦" },
+          { name: "忍者", singer: "周杰伦" },
+          { name: "开不了口", singer: "周杰伦" },
+          { name: "上海一九四三", singer: "周杰伦" },
+          { name: "对不起", singer: "周杰伦" },
+          { name: "威廉古堡", singer: "周杰伦" },
+          { name: "双节棍", singer: "周杰伦" },
+          { name: "安静", singer: "周杰伦" },
+        ],
+      },
       {
         name: "周杰伦",
         time: "2000-11-07",
         title: "Jay",
         titleZN: "杰伦",
-        cover: "../images/Jay/Jay.jpeg",
+        cover: "images/Jay/Jay.jpeg",
         musicList: [
           { name: "可爱女人", singer: "周杰伦" },
           { name: "完美主义", singer: "周杰伦" },
@@ -126,49 +905,42 @@ tags:
     ];
     const jayListDom = document.getElementById("JayList");
     console.log("jayListDom: ", jayListDom);
-
-    let listString = "";
     for (let i = 0; i < JayAlbumList.length; i++) {
       let item = JayAlbumList[i];
-
-      listString = `<div class="jay">
-                        <header class="header">
-                          <img src="${item.cover}" alt="${item.title}" class="cover" />
-                          <div class="intro">
-                            <div class="album">
-                              <div class="album-word">专辑:</div>
-                              <div class="name-cn">${item.title} <span class="name-zn">(${item.titleZN})</span></div>
-                            </div>
-                            <div class="singer">
-                              <span class="album-word">歌手:</span>${item.name}
-                            </div>
-                            <div class="time">
-                              <span class="album-word">时间:</span>${item.time}
-                            </div>
+      let listDom = document.createElement("div");
+      listDom.className = "jay";
+      let listString = `<header class="header">
+                        <img src="${item.cover}" alt="${item.title}" class="cover" />
+                        <div class="intro">
+                          <div class="album">
+                            <div class="album-word">专辑:</div>
+                            <div class="name-cn">${item.title} <span class="name-zn">${item.titleZN}</span></div>
                           </div>
-                        </header>
-                        <ul class="music-list"></ul>
-                      </div>`;
-      jayListDom.innerHTML = listString;
-      let musicListDom = document.getElementsByClassName("music-list")[0];
-      console.log("musicListDom: ", musicListDom);
+                          <div class="singer">
+                            <span class="album-word">歌手:</span>${item.name}
+                          </div>
+                          <div class="time">
+                            <span class="album-word">时间:</span>${item.time}
+                          </div>
+                        </div>
+                      </header>
+                      <ul class="music-list"></ul>`;
+      listDom.innerHTML = listString;
+      jayListDom.appendChild(listDom);
+      let musicListDom = document.getElementsByClassName("music-list")[i];
       let musicListString = "";
       for (let j = 0; j < item.musicList.length; j++) {
         let musicLi = item.musicList[j];
-
-        let musicDom = document.createElement("div");
-        musicListString = `<li class="music-li">
-                              <div class="music-li-left">
-                                <span class="index">${j + 1}</span>
-                                <span class="name">${musicLi.name}</span>
-                              </div>
-                              <div class="singer">${musicLi.singer}</div>
-                            </li>`;
+        let musicDom = document.createElement("li");
+        musicDom.className = "music-li";
+        musicListString = `<div class="music-li-left">
+                              <span class="index">${j + 1}</span>
+                              <span class="name">${musicLi.name}</span>
+                            </div>
+                            <div class="singer">${musicLi.singer}</div>`;
         musicDom.innerHTML = musicListString;
         musicListDom.append(musicDom);
       }
     }
   </script>
-
-
 
