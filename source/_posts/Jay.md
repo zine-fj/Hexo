@@ -28,7 +28,7 @@ thumbnail: images/Jay/zhoujielun.jpeg
 
       .jay {
         display: inline-block;
-        width: 360px;
+        width: 436px;
         box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
         padding: 20px 0 10px;
         border-radius: 10px;
