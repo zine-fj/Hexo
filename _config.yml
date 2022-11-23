@@ -80,5 +80,8 @@ theme: inside
 ## Docs: https://hexo.io/docs/deployment.html
 deploy:
   type: git
-  repo: git@github.com:zine-fj/blogContent.git
+  repo: git@github.com:zine-fj/blog.git
   branch: main
+  name: zine-fj
+  email: 747810974@qq.com
+  message: 😌我又提交啦~
