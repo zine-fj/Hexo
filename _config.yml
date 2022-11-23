@@ -80,5 +80,5 @@ theme: inside
 ## Docs: https://hexo.io/docs/deployment.html
 deploy:
   type: git
-  repo: git@github.com:zine-fj/blog.git
-  branch: master
+  repo: git@github.com:zine-fj/blogContent.git
+  branch: main

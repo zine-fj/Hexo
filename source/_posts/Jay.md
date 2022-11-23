@@ -18,17 +18,15 @@ thumbnail: images/Jay/zhoujielun.jpeg
       }
 
       .jay-list {
-        min-width: 390px;
         display: flex;
         justify-content: center;
         align-items: baseline;
         flex-wrap: wrap;
-        padding: 20px;
       }
 
       .jay {
         display: inline-block;
-        width: 436px;
+        width: 100%;
         box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
         padding: 20px 0 10px;
         border-radius: 10px;
