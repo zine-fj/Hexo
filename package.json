@@ -9,7 +9,7 @@
     "babel-core": "^6.26.3",
     "babel-preset-env": "^1.7.0",
     "cheerio": "^1.0.0-rc.12",
-    "hexo": "^6.3.0",
+    "hexo": "^6.0.0",
     "hexo-deployer-git": "^3.0.0",
     "hexo-generator-archive": "^2.0.0",
     "hexo-generator-category": "^2.0.0",

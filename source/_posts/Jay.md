@@ -17,3 +17,7 @@ thumbnail: images/Jay/zhoujielun.jpeg
 </style>
 
 <iframe src="html/Jay.html" id="jayIframe" name="JayIframe"  class="jay-iframe" frameborder="0" scrolling="yes"></iframe>
+
+<script>
+console.log('jay script')
+</script>
