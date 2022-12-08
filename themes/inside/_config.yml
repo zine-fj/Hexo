@@ -76,10 +76,8 @@ appearance:
 profile:
   # 邮箱用于生成 gravatar 头像，如配置了 `hexo.config.email`，此项可缺省
   email: 747810974@qq.com
-
   # 也可以直接设置头像 URL
   avatar: images/tx.jpg
-
   # 个性签名
   bio: 山行野宿，孤身万里
 
@@ -312,7 +310,7 @@ static_prefix:
 data_prefix:
 
 # Folder where json file will be generated to, default to 'api'
-data_dir:
+data_dir: 
 
 # Favicon, default to `favicon.ico`
 favicon: images/an.ico
@@ -375,19 +373,21 @@ pwa:
   #       sizes: 144x144
   #       type: image/png
 plugins:
-  - //cdn1.lncld.net/static/js/3.0.4/av-min.js
+  # - //cdn1.lncld.net/static/js/3.0.4/av-min.js
   - //unpkg.com/valine/dist/Valine.min.js
+  - //code.bdstatic.com/npm/leancloud-storage@4.12.0/dist/av-min.js
   - position: comments
     template: |
-      <div id="vcomment"></div>
+      <div id="vcomment">comments</div>
       <script>
+        console.log('valine 评论系统')
         new Valine({
           el: '#vcomment',
           appId: 'mXPpKFJU8QI4epecun4PFHRe-gzGzoHsz',
           appKey: 'BkcojMk9fBXc1UaIUVpzc68d',
           meta: ['nick'],
           path: window.location.pathname,
-          avatar: 'robohash',
+          avatar: 'mp',
           placeholder: ' ー( ´ ▽ ` )ﾉ 留下你的小脚印...',
           visitor: true,
           recordIP: true,
