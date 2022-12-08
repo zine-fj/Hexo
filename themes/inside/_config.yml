@@ -374,11 +374,11 @@ pwa:
   #       type: image/png
 plugins:
   # - //cdn1.lncld.net/static/js/3.0.4/av-min.js
-  - //unpkg.com/valine/dist/Valine.min.js
+  - //unpkg.com/valine@latest/dist/Valine.min.js
   - //code.bdstatic.com/npm/leancloud-storage@4.12.0/dist/av-min.js
   - position: comments
     template: |
-      <div id="vcomment">comments</div>
+      <div id="vcomment"></div>
       <script>
         console.log('valine 评论系统')
         new Valine({
